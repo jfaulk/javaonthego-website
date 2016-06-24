@@ -1,0 +1,10 @@
+Helping Hand - User accesses an outside document
+First Steps - Complete First Lesson
+Challenge Complete - Complete First Challenge
+Turkey - Get three answers in a row correct
+Conquered - Complete all challenges
+Finish Line - Complete Lessons
+Powerful Knowledge - Do a lesson twice
+Web 2.0 - Access The Documentation Twice
+Dud - Get every challenge question wrong
+Ace - Get every challenge question correct

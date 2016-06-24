@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java On The Go</title>
+
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/javaonthego.js"></script>
+
+</head>
+
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar z-depth-2 info-color">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/WideLogo3.png" alt=""></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" class="waves-effect waves-light">Home</a></li>
+                <li><a href="game.html" class="waves-effect waves-light">Game</a></li>
+                <script>if (isLoggedIn()) document.write('<li><a href="achievements.html" class="waves-effect waves-light">Achievements</a></li>');</script>
+                <li><a href="resources.html" class="waves-effect waves-light">Resources</a></li>
+                <script>if (!isLoggedIn()) document.write('<li><a href="signup.html" class="waves-effect waves-light">Sign Up!</a></li>');</script>
+                <script>if (!isLoggedIn()) document.write('<li><a href="login.html" class="waves-effect waves-light">Login</a></li>');</script>
+                <script>if (isLoggedIn()) document.write('<li><a href="account.html" class="waves-effect waves-light">Your Account</a></li>');</script>
+                <script>if (isLoggedIn()) document.write('<li><a href="logout.html" class="waves-effect waves-light">Logout</a></li>');</script>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Carousel -->
+    <div id="carousel1" class="carousel slide carousel-fade hoverable">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel1" data-slide-to="0" class="active">
+            </li>
+            <li data-target="#carousel1" data-slide-to="1"></li>
+            <li data-target="#carousel1" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner z-depth-2" role="listbox">
+
+            <!-- First slide -->
+            <div class="item active">
+                <div class="view overlay hm-blue-slight">
+                    <a><img src="http://mdbootstrap.com/images/slides/slide%20(7).jpg" class="img-responsive"
+                            alt="slide1">
+                        <div class="mask waves-effect waves-light"></div>
+
+                    </a>
+                    <div class="carousel-caption hidden-xs">
+                        <div class="animated fadeInDown">
+                            <h5>Learn Java!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.item -->
+
+            <!-- Second slide -->
+            <div class="item">
+                <div class="view overlay hm-blue-slight">
+                    <a><img src="http://mdbootstrap.com/images/slides/slide%20(23).jpg" class="img-responsive"
+                            alt="slide2">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                    <div class="carousel-caption hidden-xs">
+                        <div class="animated fadeInDown">
+                            <h5>Anytime, anywhere!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.item -->
+
+            <!-- Third slide -->
+            <div class="item">
+                <div class="view overlay hm-blue-slight">
+                    <a><img src="http://mdbootstrap.com/images/slides/slide%20(2).jpg" class="img-responsive"
+                            alt="slide3">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                    <div class="carousel-caption hidden-xs">
+                        <div class="animated fadeInDown">
+                            <h5>Learning Java has never been this easy!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.item -->
+
+        </div>
+        <!-- /.carousel-inner -->
+
+        <!-- Controls -->
+        <a class="left carousel-control new-control" href="#carousel1" role="button" data-slide="prev">
+            <span class="fa fa fa-angle-left waves-effect waves-light"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control new-control" href="#carousel1" role="button" data-slide="next">
+            <span class="fa fa fa-angle-right waves-effect waves-light"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+    </div>
+    <!-- /.carousel -->
+    <hr>
+    <!-- Content Row -->
+    <div class="row">
+
+        <ul class="nav nav-tabs tabs-4">
+            <li class="active"><a data-toggle="tab" href="#home">What is Java On The Go?</a></li>
+            <li><a data-toggle="tab" href="#menu1">Why</a></li>
+            <li><a data-toggle="tab" href="#menu2">About</a></li>
+	    <li><a data-toggle="tab" href="#menu4">Other Platforms</a></li>
+            <li><a data-toggle="tab" href="#menu3">Learn More</a></li>
+        </ul>
+
+        <div class="tab-content card-panel blue-grey lighten-5">
+            <div id="home" class="tab-pane fade in active">
+                <br>
+                <h5>What is Java on the Go!</h5>
+                <p>Java on the go is a mobile educational application focused on providing a way for beginners to easily
+                    get a grasp of the basics of the Java programming language.</p>
+                <a href="signup.html" class="btn btn-info waves-effect waves-light">Start Now!</a>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <br>
+                <h5>Why</h5>
+                <p>Mobile devices are an essential part of living in the modern, connected world. Java On The Go makes
+                    learning easy by always having the tools you need within hands reach. </p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <br>
+                <h5>About Java On The Go</h5>
+                <p>Java On The Go is a labour of love created by Ryan, Jeremy, James and Jonathan, a group of students
+                    studying at George Brown College. They were disappointed with the current products available on the
+                    market and wanted to deliver the best way to learn Java on your mobile device.</p>
+            </div>
+	    <div id="menu4" class="tab-pane fade">
+		<br>
+		<h5>Other Platforms</h5>
+		<p>
+		<a href="builds/JavaOnTheGo.apk">Java On The Go for Android</a>
+		<br>
+		<a href="builds/JavaOnTheGoPC.zip">Java On The Go for PC</a>
+		</p>
+            <div id="menu3" class="tab-pane fade">
+                <br>
+                <h5>Learn More Now</h5>
+                <p>There is always something more to learn! Always stay up to date with the latest technologies and
+                    programming news by checking back with us here at Java On The Go. </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+
+    <hr>
+
+
+</div>
+<!-- /.container -->
+
+
+<!-- Footer -->
+<footer class="page-footer info-color darken-1" if="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <p class="white-text center-on-small-only">GET STARTED</p>
+                <p class="white-text center-on-small-only">Register for free and start to learn.</p>
+                <a href="signup.html" class="btn btn-danger waves-effect waves-light">Get started!</a>
+
+            </div>
+            <hr class="hidden-lg hidden-md">
+
+            <div class="col-md-2">
+                <p class="white-text center-on-small-only">USEFUL LINKS</p>
+                <ul>
+                    <li><a class="grey-text text-lighten-3"
+                           href="http://www.oracle.com/technetwork/java/javase/documentation/index.html"
+                           target="_blank">Oracle Documentation</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="https://eclipse.org/downloads/" target="_blank">Eclipse
+                        IDE</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="http://stackoverflow.com/" target="_blank">Stack
+                        Overflow</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="http://www.tutorialspoint.com/java/java_quick_guide.htm" target="_blank">Java Quick
+                        Reference</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="hidden-lg hidden-md">
+
+            <div class="col-md-3 text-center">
+                <p class="white-text text-center"> SOCIAL MEDIA</p>
+                <a target="_blank" href="https://www.facebook.com/learnjavaonthego/"
+                   class="btn-floating btn-large fb-bg waves-effect waves-light"><i class="fa fa-facebook"> </i></a>
+                <a target="_blank" href="https://plus.google.com/communities/105997598486397490148"
+                   class="btn-floating btn-large gplus-bg waves-effect waves-light"><i
+                        class="fa fa-google-plus"> </i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1"> © 2016 Copyright Java On The Go</div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- Material Design Bootstrap -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+</body>
+
+</html>

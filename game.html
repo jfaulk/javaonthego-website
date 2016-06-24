@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java On The Go</title>
+
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- WebGL Player-->
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/javaonthego.js"></script>
+
+</head>
+
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar z-depth-2 info-color">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/WideLogo3.png" alt=""></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" class="waves-effect waves-light">Home</a></li>
+                <li><a href="game.html" class="waves-effect waves-light">Game</a></li>
+                <script>if (isLoggedIn()) document.write('<li><a href="achievements.html" class="waves-effect waves-light">Achievements</a></li>');</script>
+                <li><a href="resources.html" class="waves-effect waves-light">Resources</a></li>
+                <script>if (!isLoggedIn()) document.write('<li><a href="signup.html" class="waves-effect waves-light">Sign Up!</a></li>');</script>
+                <script>if (!isLoggedIn()) document.write('<li><a href="login.html" class="waves-effect waves-light">Login</a></li>');</script>
+                <script>if (isLoggedIn()) document.write('<li><a href="account.html" class="waves-effect waves-light">Your Account</a></li>');</script>
+                <script>if (isLoggedIn()) document.write('<li><a href="logout.html" class="waves-effect waves-light">Logout</a></li>');</script>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="text-left"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="640px" width="360px"></canvas>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="page-footer info-color darken-1" if="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <p class="white-text center-on-small-only">GET STARTED</p>
+                <p class="white-text center-on-small-only">Register for free and start to learn.</p>
+                <a href="signup.html" class="btn btn-danger waves-effect waves-light">Get started!</a>
+
+            </div>
+            <hr class="hidden-lg hidden-md">
+
+            <div class="col-md-2">
+                <p class="white-text center-on-small-only">USEFUL LINKS</p>
+                <ul>
+                    <li><a class="grey-text text-lighten-3"
+                           href="http://www.oracle.com/technetwork/java/javase/documentation/index.html"
+                           target="_blank">Oracle Documentation</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="https://eclipse.org/downloads/" target="_blank">Eclipse
+                        IDE</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="http://stackoverflow.com/" target="_blank">Stack
+                        Overflow</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="http://www.tutorialspoint.com/java/java_quick_guide.htm" target="_blank">Java Quick
+                        Reference</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="hidden-lg hidden-md">
+
+            <div class="col-md-3 text-center">
+                <p class="white-text text-center"> SOCIAL MEDIA</p>
+                <a target="_blank" href="https://www.facebook.com/learnjavaonthego/"
+                   class="btn-floating btn-large fb-bg waves-effect waves-light"><i class="fa fa-facebook"> </i></a>
+                <a target="_blank" href="https://plus.google.com/communities/105997598486397490148"
+                   class="btn-floating btn-large gplus-bg waves-effect waves-light"><i
+                        class="fa fa-google-plus"> </i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1"> © 2016 Copyright Java On The Go</div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+
+<script type='text/javascript'>
+    // connect to canvas
+    var Module = {
+        TOTAL_MEMORY: 268435456,
+        filePackagePrefixURL: "Release/",
+        memoryInitializerPrefixURL: "Release/",
+        preRun: [],
+        postRun: [],
+        print: (function() {
+            return function(text) {
+                console.log (text);
+            };
+        })(),
+        printErr: function(text) {
+            console.error (text);
+        },
+        canvas: document.getElementById('canvas'),
+        progress: null,
+        setStatus: function(text) {
+            if (this.progress == null)
+            {
+                if (typeof UnityProgress != 'function')
+                    return;
+                this.progress = new UnityProgress (canvas);
+            }
+            if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+            if (text === Module.setStatus.text) return;
+            this.progress.SetMessage (text);
+            var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+            if (m)
+                this.progress.SetProgress (parseInt(m[2])/parseInt(m[4]));
+            if (text === "")
+                this.progress.Clear()
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+            this.totalDependencies = Math.max(this.totalDependencies, left);
+            Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+        }
+    };
+    Module.setStatus('Downloading (0.0/1)');
+</script>
+<script src="Release/UnityConfig.js"></script>
+<script src="Release/fileloader.js"></script>
+<script>if (!(!Math.fround)) {
+    var script = document.createElement('script');
+    script.src = "Release/WebGLBuild.js";
+    document.body.appendChild(script);
+} else {
+    var codeXHR = new XMLHttpRequest();
+    codeXHR.open('GET', 'Release/WebGLBuild.js', true);
+    codeXHR.onload = function() {
+        var code = codeXHR.responseText;
+        if (!Math.fround) {
+            try {
+                console.log('optimizing out Math.fround calls');
+                var m = /var ([^=]+)=global\.Math\.fround;/.exec(code);
+                var minified = m[1];
+                if (!minified) throw 'fail';
+                var startAsm = code.indexOf('// EMSCRIPTEN_START_FUNCS');
+                var endAsm = code.indexOf('// EMSCRIPTEN_END_FUNCS');
+                var asm = code.substring(startAsm, endAsm);
+                do {
+                    var moar = false; // we need to re-do, as x(x( will not be fixed
+                    asm = asm.replace(new RegExp('[^a-zA-Z0-9\\$\\_]' + minified + '\\(', 'g'), function(s) { moar = true; return s[0] + '(' });
+                } while (moar);
+                code = code.substring(0, startAsm) + asm + code.substring(endAsm);
+                code = code.replace("'use asm'", "'almost asm'");
+            } catch(e) { console.log('failed to optimize out Math.fround calls ' + e) }
+        }
+
+        var blob = new Blob([code], { type: 'text/javascript' });
+        codeXHR = null;
+        var src = URL.createObjectURL(blob);
+        var script = document.createElement('script');
+        script.src = URL.createObjectURL(blob);
+        script.onload = function() {
+            URL.revokeObjectURL(script.src);
+        };
+        document.body.appendChild(script);
+    };
+    codeXHR.send(null);
+}
+</script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- Material Design Bootstrap -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+
+</body>
+
+</html>
